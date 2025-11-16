@@ -14,6 +14,43 @@ baseline for the cardiovascular federated learning proof-of-concept:
 Once these artifacts exist you can federate the model (Flower/Opacus) and deploy
 Streamlit; the instructions below focus on reaching that ready-to-federate state.
 
+## 0. Bring the project into VS Code
+
+1. **Clone the repo** (or download the ZIP) and open the folder in VS Code via
+   `File → Open Folder…`.
+2. **Create a virtual environment** inside VS Code’s terminal:
+
+   ```bash
+   python -m venv .venv
+   ```
+
+3. **Select the interpreter** by clicking the VS Code status bar (Python
+   version) → “Enter interpreter path…” → `.venv/bin/python`
+   (`.venv\Scripts\python.exe` on Windows). This ensures the editor, debugger,
+   and notebooks share the same environment.
+4. **Install the dependencies** from the integrated terminal:
+
+   ```bash
+   source .venv/bin/activate  # Windows: .venv\Scripts\activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+5. **Create a `.env` file (optional)** with the Kaggle credentials so both VS
+   Code and the Streamlit app can read them:
+
+   ```env
+   KAGGLE_USERNAME=your_username
+   KAGGLE_KEY=your_key
+   ```
+
+   Then install VS Code’s “Python Environment Manager” (or similar) extension
+   to auto-load `.env` files, or export them manually in each terminal session.
+
+Once this setup is done, every command below can be run from the VS Code
+terminal (`Ctrl+``) or through Run → Run Without Debugging with the selected
+interpreter.
+
 ## 1. Environment setup (VS Code or terminal)
 
 ```bash
